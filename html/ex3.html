@@ -39,16 +39,14 @@
         <a href="ex5.html" title="Click to go to example #6">Go to Exercise 6</a>
         <br />
         <hr>
-        <input type="number" class="form-control" style="width: 250px;" placeholder="enter first number.." id="txtNum1" name="txtNum1">
-        <br />
-        <input type="number" class="form-control" style="width: 250px;" placeholder="enter second number.." id="txtNum2" name="txtNum2">
-        <hr>
-        <button class="btn btn-sm btn-primary" onclick="myFunction()" id=btnExercise>Ex 3: Arrays  </button>
-        <button class="btn btn-sm btn-primary" onclick="clearValues()" id=btnClear>Clear Values </button>
+        <button class="btn btn-sm btn-primary" id=btnShowQuestion onclick="showQuestionModal()" >Ex 3: Arrays </button>
         <button class="btn btn-sm btn-primary" id="btnOverLay"  onclick="showRequirementModal()">View Requirement</button>
         <br /> <br />
-        <label id='lblMessage'></label>
+
     </div>
+    <!--=============================
+        Requirement Modal
+    ================================-->
     <div id="myOverlay"></div>
     <div class="container" id="requirementModal" style="width: 650px;">
         <br />
@@ -68,6 +66,50 @@
         <img style="max-width:100%; max-height:100%;" src="../img/ex3.png"/>
         <hr />
         <button type='button' class="btn btn-sm btn-primary btnOverLayClose">Close</button>
+    </div>
+    <!--=============================
+        Question Modal
+    ================================-->
+    <div class="container" id="questionModal" style="width: 550px;">
+        <br />
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <h4 style="text-align: left; padding-left:15px;">
+                        Exercise #3: Arrays
+                    </h4>
+                </td>
+                <td style="text-align: right;">
+                    <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
+                </td>
+            </tr>
+        </table> 
+        <hr />
+        <div class="row ">
+            <div class="col-12">
+                Enter numbers into Array (separate by comma): 
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12" style="padding: 10px;"> 
+                <input type="text" class="form-control" style="width: 100%;"  id="txtValues" name="txtValues">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12">
+                <b><u>Answer:</u></b> 
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12" style="padding: 10px;"> 
+                <label id='lblMessage'></label>
+            </div>
+        </div>
+        <hr />
+        <button type='button' class="btn btn-sm btn-primary" onclick="myFunction()">Process</button>
+        <button type='button' class="btn btn-sm btn-primary" onclick="clearValues()">Clear</button>
+        <button type='button' class="btn btn-sm btn-danger btnOverLayClose"  >Close</button>
+
     </div>
 </body>
 </html>

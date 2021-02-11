@@ -1,41 +1,43 @@
 function myFunction() {
-    let num1 = 0;
-    let num2 = 0;
-    let addTotal = 0;
-    let subTotal = 0;
-    let multiplicationTotal = 0;
-    let divisionTotal = 0;
-    let moduloTotal = 0;
-    let message = "";
-    num1 = document.getElementById("txtNum1").value;
-    num2 = document.getElementById("txtNum2").value;
+    let myArray = [];
+    let values = '';
+    let sum = 0;
+    let message = ''
+    let minVal = 0;
+    let maxVal = 0;
+    
+    values = document.getElementById("txtValues").value;
 
-    if (num1=='') {
-        alert('Please enter first number!')
-    }
-    else if (num2=='') {
-        alert('Please enter second number!')
+    if (values=='') {
+        alert('Please enter some numbers separated by comma!')
+        document.getElementById("txtValues").value  = '';
+        document.getElementById("txtValues").focus();
     }
     else 
     {
-        addTotal = Number(num1) + Number(num2)
-        subTotal = Number(num1) - Number(num2)
-        multiTotal = Number(num1) * Number(num2)
-        div = Number(num1) / Number(num2)
-        moduloTotal = Number(num1) % Number(num2)
+        values.split(",").forEach(function (item) {
+            myArray.push(item.trim());
+        });
+ 
+        for (var i = 0; i < myArray.length; i++) {
+            sum += Number(myArray[i])
+          }
 
-        message = num1 + ' + '  + num2 + ' = ' + addTotal + '<br />' 
-                + num1 + ' - '  + num2 + ' = ' + subTotal + '<br />'
-                + num1 + ' * '  + num2 + ' = ' + multiTotal + '<br />'
-                + num1 + ' / '  + num2 + ' = ' + div + '<br />' 
-                + num1 + ' % '  + num2 + ' = ' + moduloTotal + '<br />'
+        minVal = Math.min(...myArray)
+        maxVal = Math.max(...myArray)
 
-        document.getElementById("lblMessage").innerHTML  =  message;
+        message  += 'Sum of all array values is: ' + sum + '<br/>' + 
+                    'Minimum value of this array is: ' + minVal + '<br/>' +
+                    'Maximum value of this array is: ' + maxVal
+        document.getElementById("lblMessage").innerHTML  = message
+
+        console.log(myArray);
+        console.log(message.replaceAll("<br/>", "\n"));
     }
 }
 
 function clearValues() {
-    document.getElementById("txtNum1").value  = '';
-    document.getElementById("txtNum2").value  = '';
+    document.getElementById("txtValues").value  = '';
     document.getElementById("lblMessage").innerHTML  = '';
+    document.getElementById("txtValues").focus();
 }
