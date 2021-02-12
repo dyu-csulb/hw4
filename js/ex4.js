@@ -1,30 +1,31 @@
 function myFunction() {
+    let myArray = [];
+    let values = '';
+    let message = ''
+    let lowerCaseVal = '';
+    values = document.getElementById("txtValues").value;
 
-    let password = '';
-    let correctPassword = '';
-
-    password = prompt('Please enter your password', password)
-    correctPassword = 'secret';
-
-    let i;
-    for (i = 1; i < 4; i++) {
-        if (password !=correctPassword)  {
-            prompt('Invalid password. Please enter correct password!', password)
-
-        }
-        else if (i==3) {
-            alert('Your account is locked!  You failed to enter the correct password after ' + i + ' times(s).');
-        }
-        else if (password ==correctPassword) {
-      
-            alert('You entered the correct password after ' + i + ' attempt(s).');
-            i = 3;
-        } 
-      }
-
-    
-
-
+    if (values=='') {
+        alert('Please enter some values separated by comma!')
+        document.getElementById("txtValues").value  = '';
+        document.getElementById("txtValues").focus();
+    }
+    else 
+    {
+        values.split(",").forEach(function (item) {
+            lowerCaseVal = item.toLowerCase().trim();
+            if (lowerCaseVal != 'stop') {
+                message  += lowerCaseVal + '<br/>' 
+                console.log(lowerCaseVal.trim());
+            }
+        });
+ 
+        document.getElementById("lblMessage").innerHTML  = message
+    }
 }
 
-
+function clearValues() {
+    document.getElementById("txtValues").value  = '';
+    document.getElementById("lblMessage").innerHTML  = '';
+    document.getElementById("txtValues").focus();
+}
