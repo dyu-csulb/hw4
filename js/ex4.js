@@ -14,7 +14,7 @@ function myFunction() {
     {
         values.split(",").forEach(function (item) {
             lowerCaseVal = item.toLowerCase().trim();
-            if (lowerCaseVal != 'stop') {
+            if (lowerCaseVal.substring(0,4) != 'stop') {
                 message  += lowerCaseVal + '<br/>' 
                 console.log(lowerCaseVal.trim());
             }
