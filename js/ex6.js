@@ -64,4 +64,5 @@ function clearValues() {
     document.getElementById("txtValues").value  = '';
     document.getElementById("lblMessage").innerHTML  = '';
     document.getElementById("txtValues").focus();
+    counter =0;
 }
