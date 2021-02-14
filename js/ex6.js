@@ -25,6 +25,7 @@ function checkBoxClick() {
 }
 
 function randomNumber() {
+   counter = 0;
    let randNum = 0;
    randNum = Math.floor((Math.random() * 100) + 1);
    return randNum;
