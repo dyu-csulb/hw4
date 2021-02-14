@@ -1,45 +1,66 @@
-function myFunction() {
-    let hours = '';
-    let minutes = '';
-    let seconds = ''; 
-    let message = "";
-    let total = '';
 
-    hours = document.getElementById("hours").value;
-    minutes = document.getElementById("minutes").value;
-    seconds = document.getElementById("seconds").value;
+let counter = 0;
 
+//document.ready    
+document.addEventListener("DOMContentLoaded", function(){
+    getNewNumber();
+    document.getElementById('txtMyRandomNum').style.display = 'none'
+});
+  
 
-    if (seconds==59 && minutes < 59 && hours < 59) {
-        document.getElementById("minutes").value  = Number(minutes) + 1;
-        document.getElementById("seconds").value  = 0;
-    }
-    else if (seconds<59 && minutes < 59 && hours < 59) {
-        document.getElementById("seconds").value  = Number(seconds) + 1;
-    }
-    else if (seconds<59 && minutes == 59 && hours < 12) {
-        document.getElementById("seconds").value  = Number(seconds) + 1;
-    }
-    else if (seconds==59 && minutes == 59 && hours < 12) {
-        document.getElementById("seconds").value  = 0;
-        document.getElementById("minutes").value  = 0;
-        document.getElementById("hours").value  =Number(hours) + 1;
-    }
-    else if (seconds==59 && minutes == 59 && hours == 12) {
-        document.getElementById("seconds").value  = 0;
-        document.getElementById("minutes").value  = 0;
-        document.getElementById("hours").value  = 0;
-    }
-    else if (seconds<59 && minutes == 59 && hours == 12) {
-        document.getElementById("seconds").value  = Number(seconds) + 1;
-    }
+function getNewNumber() {
+    document.getElementById("txtMyRandomNum").value = randomNumber();
+ }
 
+function checkBoxClick() {
+    var checkBox = document.getElementById('chkViewNumber');
+    if (checkBox.checked == true)
+    {
+        document.getElementById('txtMyRandomNum').style.display = ''
+    } 
+    else {
+        document.getElementById('txtMyRandomNum').style.display = 'none'
+    }
 }
 
+function randomNumber() {
+   let randNum = 0;
+   randNum = Math.floor((Math.random() * 100) + 1);
+   return randNum;
+}
+
+function myFunction() {
+    let values = '';
+    values = document.getElementById("txtValues").value;
+
+    if (values=='' || values < 1 || values > 100) {
+        alert("Please enter a number between 1 and 100!");
+        clearValues();
+    }
+    else 
+    {    
+        checkValue(values);
+    }
+}
+
+function checkValue(val) {
+    let randNum = document.getElementById("txtMyRandomNum").value;
+    if (val == randNum) {
+        counter += 1
+        document.getElementById("lblMessage").innerHTML  = 'Correct! It took you ' + counter + ' attempt(s) to get the number correct.';
+    }
+    else if (val > randNum) {
+        counter += 1
+        document.getElementById("lblMessage").innerHTML  = 'Too high. Guess again. So far you have made ' + counter + ' attempt(s) to get the number correct.';
+    }
+    else if (val < randNum) {
+        counter += 1
+        document.getElementById("lblMessage").innerHTML  = 'Too low. Guess again. So far you have made ' + counter + ' attempt(s) to get the number correct.';
+    }
+}
 
 function clearValues() {
-    document.getElementById("hours").value  = '0';
-    document.getElementById("minutes").value  = '0';
-    document.getElementById("seconds").value  = '0';
+    document.getElementById("txtValues").value  = '';
     document.getElementById("lblMessage").innerHTML  = '';
+    document.getElementById("txtValues").focus();
 }

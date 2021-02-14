@@ -40,13 +40,14 @@ function myFunction() {
           }
 
           if (myArray[0]==myArray[4] && myArray[1]==myArray[3] ) {
-            message += "'" +  values + "' contains (" + counter + ") vowels and is a palindrome."
+            message += "'" +  values + "' contains " + counter + " vowel(s) and is a palindrome."
           }
           else {
-            message += "'" +  values + "' contains (" + counter + ") vowels and is not a palindrome."
+            message += "'" +  values + "' contains " + counter + " vowel(s) and is not a palindrome."
           }
          
         document.getElementById("lblMessage").innerHTML  = message
+        console.log(message);
     }
 }
 

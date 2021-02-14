@@ -24,13 +24,13 @@
 <body>
     <div class="container" style="padding-top:15px;">
         <h2>
-            Exercise #6: Guess Number
+            Exercise #6: Guess Number 
         </h2>
         <a href="../index.html" title="Click back to Index page">Go to Index Page</a>
         <hr>
         <a href="ex1.html" title="Click to go to example #1">Go to Exercise 1</a>
         <br />
-        <a href="ex2.html" title="Click to go to example #3">Go to Exercise 2</a>
+        <a href="ex2.html" title="Click to go to example #2">Go to Exercise 2</a>
         <br />
         <a href="ex3.html" title="Click to go to example #3">Go to Exercise 3</a>
         <br />
@@ -39,14 +39,16 @@
         <a href="ex5.html" title="Click to go to example #5">Go to Exercise 5</a>
         <br />
         <hr>
-        <button class="btn btn-sm btn-primary" onclick="myFunction()" id=btnExercise>Ex #6: Guess Number</button>
-        <button class="btn btn-sm btn-primary" onclick="clearValues()" id=btnClear>Reset Values </button>
+        <button class="btn btn-sm btn-primary" id=btnShowQuestion onclick="showQuestionModal()" >Ex 6: Guess Number  </button>
         <button class="btn btn-sm btn-primary" id="btnOverLay"  onclick="showRequirementModal()">View Requirement</button>
         <br /> <br />
-        <label id='lblMessage'></label>
+
     </div>
+    <!--=============================
+        Requirement Modal
+    ================================-->
     <div id="myOverlay"></div>
-    <div class="container" id="requirementModal" style="width: 620px;">
+    <div class="container" id="requirementModal" style="width: 650px;">
         <br />
         <table style="width: 100%;">
             <tr>
@@ -64,6 +66,62 @@
         <img style="max-width:100%; max-height:100%;" src="../img/ex6.png"/>
         <hr />
         <button type='button' class="btn btn-sm btn-primary btnOverLayClose">Close</button>
+    </div>
+    <!--=============================
+        Question Modal
+    ================================-->
+    <div class="container" id="questionModal" style="width: 550px;">
+        <br />
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <h4 style="text-align: left; padding-left:15px;">
+                        Exercise #6: Guess Number 
+                    </h4>
+                </td>
+                <td style="text-align: right;">
+                    <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
+                </td>
+            </tr>
+        </table> 
+        <hr />
+        <div class="row ">
+            <div class="col-12">
+                Enter a number between 1 and 100: 
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12" style="padding: 10px;"> 
+                <input type="number" class="form-control" style="width: 100%;"  id="txtValues" min="1" max="100"  name="txtValues">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12">
+                <b><u>Answer:</u></b> 
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12" style="padding: 10px;"> 
+                <label id='lblMessage'></label>   
+                <hr>            
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="text-align: left; padding:10px ;">
+                            <input type="checkbox" id="chkViewNumber" onclick="checkBoxClick()">
+                            <label for="chkViewNumber"> View Random Number: </label> &nbsp;
+                        </td>
+                        <td>
+                            <input style="width: 250px;" class="form-control" readonly  type="text" id="txtMyRandomNum" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <button type='button' class="btn btn-sm btn-primary" onclick="myFunction()">Process</button>
+        <button type='button' class="btn btn-sm btn-primary" onclick="clearValues()">Clear</button>
+        <button type='button' class="btn btn-sm btn-primary" onclick="getNewNumber()">Get New Number</button>
+        <button type='button' class="btn btn-sm btn-danger btnOverLayClose"  >Close</button>
     </div>
 </body>
 </html>
