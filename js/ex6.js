@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function getNewNumber() {
     document.getElementById("txtMyRandomNum").value = randomNumber();
+    counter =0;
  }
 
 function checkBoxClick() {
