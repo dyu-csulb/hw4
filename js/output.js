@@ -1,187 +1,118 @@
 /* ============================
 8.	What is the output of the following?
 ==============================*/
-// console.log(4 + 5);
-// console.log("4 + 5");
-// console.log("4" + "5");
-// console.log(2 + 3 * 5);
-// console.log((2 + 3) * 5);
-// console.log(10 % 3);
+// let x = 7;
 
-
-/* ============================
-9.	Variable Scope: What is the output of the following?
-==============================*/
-// let num1 = 0;
-// {
-//   num1 = 1; 
-//   const num2 = 0;
+// function myFunction(x) {
+//     x = 10;
+//     console.log(`x = ${x}`);
 // }
-// console.log(num1); 
-// console.log(num2); 
+
+// console.log(`x = ${x}`);
+// myFunction(x);
+// console.log(`x = ${x}`);
+
+
 
 /* ============================
-10.	Constants: What is the output of the following?
+9.	What is the output of the following?
 ==============================*/
-// const pi = 3.14;
-// pi = 3.14159;
-// console.log(pi);
+// let x = 7;
+
+// function myFunction(x) {
+//     x = 10;
+//     console.log(`x = ${x}`);
+//     return x;
+// }
+
+// console.log(`x = ${x}`);
+// x = myFunction(x);
+// console.log(`x = ${x}`);
+
+
+
+/* ============================
+10.	What is the output of the following?
+==============================*/
+// let x = 7;
+
+// function myFunction(x) {
+//     x = 10;
+//     return x;
+//     console.log(`x = ${x}`);
+// }
+
+// console.log(`x = ${x}`);
+// x = myFunction(x);
+// console.log(`x = ${x}`);
 
 
 /* ============================
 11.	What is the output of the following?
 ==============================*/
-// let a = 2;
-// a -= 1;
-// a++;
-// let b = 8;
-// b += 2;
-// const c = a + b * b;
-// const d = a * b + b;
-// const e = a * (b + b);
-// const f = a * b / a;
-// const g = b / a * a;
-// console.log(a, b, c, d, e, f, g);
+// let x = 7;
+// let y = 8;
+
+// function myFunction(x) {
+//     console.log(`x = ${x}`);
+//     x = 10;
+//     return x;
+    
+// }
+
+// console.log(`x = ${x}`);
+// console.log(`y = ${y}`);
+// x = myFunction(y);
+// console.log(`x = ${x}`);
+// console.log(`y = ${y}`);
+
 
 /* ============================
-12.	What is the output of the following?
+12.	Modeling a dog (Reference text chapter 6)
+Complete the following program to add the dog object definition.
 ==============================*/
-// console.log(true && "Hello");      
-// console.log(false && "Hello");     
-// console.log(undefined && "Hello"); 
-// console.log("" && "Hello");        
-// console.log("Hello" && "Goodbye")  
-
-// console.log(true || "Hello");      
-// console.log(false || "Hello");     
-// console.log(undefined || "Hello"); 
-// console.log("" || "Hello");        
-// console.log("Hello" || "Goodbye")
+// let dog = {
+//   name: "fang",
+//   species: "boarhound",
+//   size: "75",
+//   bark:"Grr! Grrr!"
+// }
+// console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);
+// console.log(`Look, a cat! ${dog.name} barks: ${dog.bark}`);
 
 
 /* ============================
 13.	What is the output of the following?
 ==============================*/
-// console.log("0" == 0); 
-// console.log("" == 0);
-// console.log("" == 1);
-// console.log(true == 0);
-// console.log(true == 1);
+// const foods = ["Pizza", "Burger", "Hot Dog", "Taco"];
 
-// console.log("0" === 0);
-// console.log("" === 0);
-// console.log("" === 1);
-// console.log(true === 0);
-// console.log(true === 1);
+// console.log(foods.length);
+// console.log(foods[2]);
+// console.log(foods[4]);
 
-/* ============================
-14.a	What is the output of the following?
-==============================*/
-// let i = 1;
+// foods.push("Lasagna");
+// console.log(foods[4]);
 
-// if ((1 > 2) && i++) {
-//    //Nothing.  Want to test condition
-// }
+// foods.unshift("Chicken");
+// console.log(foods[0]);
 
-// console.log(`The value of i is: ${i}`);
+// foods.pop();
+
+// foods.splice(1,3);
+// console.log(foods.length);
+// console.log(foods[1]);
 
 
 /* ============================
-14.b	What is the output of the following?
+14. What is the output of the following?
 ==============================*/
-// let i = 1;
+// const myString = "JavaScript is fun!";
+// console.log(myString.length);
+// console.log(myString[1]);
+// console.log(myString.indexOf("i"));
+// console.log(myString.indexOf("e"));
+// console.log(myString.indexOf("a", 2));
+// console.log(myString.lastIndexOf("i"));
+// console.log(myString.substring(4,10));
 
-// if ((1 < 2) && i++) {
-//    //Nothing.  Want to test condition
-// }
-
-// console.log(`The value of i is: ${i}`);
-
-
-
-/* ============================
-15.a	Break Test
-==============================*/
-// const x = "abc";
-// switch (x) {
-//   case "abc":
-//     console.log("x = abc");
-//     break;
-//   case "def":
-//     console.log("x = def");
-//     break;
-// }
-
-/* ============================
-15.b	Break Test
-==============================*/
-// const x = "abc";
-// switch (x) {
-//   case "abc":
-//     console.log("x = abc");
-//     //no break
-//   case "def":
-//     console.log("x = def");
-//     break;
-// }
-
-/* ============================
-16.	What is the output of the following?
-==============================*/
-// let x = 3;
-// let y = 3;
-// if (x > 2) {
-//   if  (y > 2) {
-//      z = x + y;
-//      console.log("z is: ", z);
-//   }
-// } 
-// else {
-//   console.log("x is: ", x);
-// }
-
-
-/* ============================
-17.	What is the output of the following, if any (indent this properly)?
-==============================*/
-// let x = 3;
-// let y = 3;
-// if (x > 2) {
-//   if  (y > 2) {
-//     z = x + y;
-//     console.log("z is: ", z);
-//   }
-//   else {
-//     console.log("x is: ", x);
-//   }
-// }
-  
-/* ============================
-18.	How many times does this loop run and what is the output?
-==============================*/
-// let number = 1;
-// while (number <= 5) {
-//   console.log(number);
-//   number++;
-// }
-
-// let number = 1;
-// while (number <= 5) {
-//   console.log(number);
-// }
-
-
-/* ============================
-19.	How many times does this loop run and what is the output?
-==============================*/
-// for (let i = 1; i <= 5; i++) {
-//     console.log(i);
-//   }
- 
-
-  for (let i = 1; i <= 5; i++) {
-    console.log(i);
-    i++;
-  }
- 
 
