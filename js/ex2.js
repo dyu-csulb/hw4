@@ -1,31 +1,24 @@
 
 function myFunction() {
-    let dayOfWeek ='';
-    let s = ''
-    dayOfWeek = prompt("Please enter day of the week:", dayOfWeek);
-    s= dayOfWeek.substring(0,3).toLowerCase();
+    let v_radius =   document.getElementById("txtNum1").value 
+    let answer = '';
+    const circle = {
+            circumference: "50",
+            area: "20",
+            radius:  v_radius
+    }
 
-    switch(true) {
-        case s == 'sun': 
-            document.getElementById("lblMessage").innerHTML  = "You entered: <i>" + s + '</i>. <br/> The following day is: ' + '<i>Monday.</i>';
-            break;
-        case s =='mon': 
-            document.getElementById("lblMessage").innerHTML  = "You entered: <i>" + s + '</i>. <br/> The following day is: ' + '<i>Tuesday.</i>';
-            break;
-        case s == 'tue': 
-            document.getElementById("lblMessage").innerHTML  = "You entered: <i>" + s + '</i>. <br/> The following day is: ' + '<i>Wednesday.</i>';
-            break;
-        case s =='wed': 
-            document.getElementById("lblMessage").innerHTML  = "You entered: <i>" + s + '</i>. <br/> The following day is: ' + '<i>Thursday.</i>';
-            break;
-        case s == 'thu': 
-            document.getElementById("lblMessage").innerHTML  = "You entered: <i>" + s + '</i>. <br/> The following day is: ' + '<i>Friday.</i>';
-            break;
-        case s =='fri': 
-            document.getElementById("lblMessage").innerHTML  = "You entered: <i>" + s + '</i>. <br/> The following day is: ' + '<i>Saturday.</i>';
-            break;
-        case s == 'sat': 
-            document.getElementById("lblMessage").innerHTML  = "You entered: <i>" + s + '</i>. <br/> The following day is: ' + '<i>Sunday.</i>';
-            break;
-      } 
+    console.log(circle.circumference)
+    console.log(circle.area)
+    console.log(circle.radius)
+
+    answer = 'Its circumference is: '+ circle.circumference + '<br/>' + 'Its area is: ' + circle.area + '<br/>Its radius is: ' + circle.radius
+    document.getElementById("lblMessage").innerHTML  =  answer;
+    console.log(answer.replaceAll("<br/>", "\n"));
+}
+
+function clearValues() {
+    document.getElementById("txtNum1").value  = '';
+    document.getElementById("lblMessage").innerHTML  = '';
+    document.getElementById("txtNum1").focus();
 }

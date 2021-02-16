@@ -22,11 +22,13 @@
 </head>
 
 <body>
+
     <div class="container" style="padding-top:15px;">
         <h2>
-            Exercise #2: Modeling a circle (Reference text chapter 06)
+            Exercise #2: Modeling a circle
         </h2>
-        <a href="../index.html" title="Click back to Index page">Go to Index Page</a>
+
+        <a href="../index.html" title="Return to Index page">Return to Index page</a>
         <hr>
         <a href="ex1.html" title="Click to go to example #1">Go to Exercise 1</a>
         <br />
@@ -36,16 +38,18 @@
         <br />
         <a href="ex5.html" title="Click to go to example #5">Go to Exercise 5</a>
         <br />
-        <a href="ex5.html" title="Click to go to example #6">Go to Exercise 6</a>
+        <a href="ex6.html" title="Click to go to example #6">Go to Exercise 6</a>
         <br />
-        <br />
-        <button class="btn btn-sm btn-primary" onclick="myFunction()" id=btnExercise>Ex 2: Modeling a circle </button>
+        <hr>
+        <button class="btn btn-sm btn-primary" id=btnShowQuestion onclick="showQuestionModal()" >Ex 1: Modeling a circle</button>
         <button class="btn btn-sm btn-primary" id="btnOverLay"  onclick="showRequirementModal()">View Requirement</button>
         <br />
         <br />
-        <label id='lblMessage'></label>
     </div>
     <div id="myOverlay"></div>
+    <!--=============================
+        Requirement Modal
+    ================================-->
     <div class="container" id="requirementModal" style="width: 650px;">
         <br />
         <table style="width: 100%;">
@@ -65,5 +69,49 @@
         <hr />
         <button type='button' class="btn btn-sm btn-primary btnOverLayClose">Close</button>
     </div>
+    <!--=============================
+        Question Modal
+    ================================-->
+    <div class="container" id="questionModal" style="width: 450px;">
+        <br />
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <h4 style="text-align: left; padding-left:15px;">
+                        Exercise #2: Modeling a circle
+                    </h4>
+                </td>
+                <td style="text-align: right;">
+                    <button type='button' class="btn btn-sm btn-close btnOverLayClose" style="margin-top: -20px;"></button>
+                </td>
+            </tr>
+        </table> 
+        <hr />
+        <div class="row ">
+            <div class="col-6 my-text-right">
+                Enter the circle radius: 
+            </div>
+            <div class="col-6"> 
+                <input type="number" class="form-control" style="width: 150px;"  id="txtNum1" name="txtNum1">
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-3 my-text-right">
+                Answer: 
+            </div>
+            <div class="col-9 my-text-left" >   
+                <label id="lblMessage" readonly name="lblAnswer"></label>
+            </div>
+        </div>
+        <hr />
+        <button type='button' class="btn btn-sm btn-primary" onclick="myFunction()">Submit</button>
+        <button type='button' class="btn btn-sm btn-primary" onclick="clearValues()">Clear</button>
+        <button type='button' class="btn btn-sm btn-danger btnOverLayClose"  >Close</button>
+
+    </div>
+
+
 </body>
+
 </html>
